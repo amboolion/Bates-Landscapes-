@@ -1,0 +1,100 @@
+backend:
+  name: git-gateway        # Netlify Identity + Git Gateway
+  branch: main
+
+# Where uploaded photos go
+media_folder: "src/assets/gallery"
+public_folder: "/assets/gallery"
+
+site_url: "/"              # keep simple
+
+collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "public/config.json"
+        label: "Brand & Estimator"
+        name: "config"
+        fields:
+          - label: Brand
+            name: brand
+            widget: object
+            fields:
+              - {label: Business Name, name: name, widget: string}
+              - {label: Owner (used in messages), name: owner, widget: string}
+              - {label: Phone (displayed on site), name: phone, widget: string}
+              - {label: WhatsApp (digits only), name: whatsapp, widget: string}
+              - {label: Email, name: email, widget: string}
+              - {label: Areas (subtitle), name: areas, widget: string}
+              - {label: Strapline (main tagline), name: strap, widget: text}
+          - label: Pricing
+            name: pricing
+            widget: object
+            fields:
+              - label: Base Rates (per m²)
+                name: bases
+                widget: object
+                fields:
+                  - label: Patio
+                    name: patio
+                    widget: object
+                    fields:
+                      - {label: Labour £/m², name: labourPerM2, widget: number, value_type: float}
+                      - {label: Materials £/m², name: materialPerM2, widget: number, value_type: float}
+                  - label: Shed Base
+                    name: shedbase
+                    widget: object
+                    fields:
+                      - {label: Labour £/m², name: labourPerM2, widget: number}
+                      - {label: Materials £/m², name: materialPerM2, widget: number}
+                  - label: Steps
+                    name: steps
+                    widget: object
+                    fields:
+                      - {label: Labour £/m², name: labourPerM2, widget: number}
+                      - {label: Materials £/m², name: materialPerM2, widget: number}
+                  - label: Raised Beds
+                    name: raisedbeds
+                    widget: object
+                    fields:
+                      - {label: Labour £/m², name: labourPerM2, widget: number}
+                      - {label: Materials £/m², name: materialPerM2, widget: number}
+                  - label: Path
+                    name: path
+                    widget: object
+                    fields:
+                      - {label: Labour £/m², name: labourPerM2, widget: number}
+                      - {label: Materials £/m², name: materialPerM2, widget: number}
+              - label: Material Tier Multipliers
+                name: tiers
+                widget: object
+                fields:
+                  - {label: £ (budget), name: basic, widget: number, value_type: float, step: 0.05}
+                  - {label: ££ (mid), name: mid, widget: number, value_type: float, step: 0.05}
+                  - {label: £££ (premium), name: premium, widget: number, value_type: float, step: 0.05}
+              - label: Access Multipliers
+                name: access
+                widget: object
+                fields:
+                  - {label: Easy, name: easy, widget: number, value_type: float, step: 0.05}
+                  - {label: Normal, name: normal, widget: number, value_type: float, step: 0.05}
+                  - {label: Tricky, name: tricky, widget: number, value_type: float, step: 0.05}
+              - label: Waste add-on (£/m²)
+                name: wasteAddPerM2
+                widget: object
+                fields:
+                  - {label: None, name: none, widget: number}
+                  - {label: Some, name: some, widget: number}
+                  - {label: Heavy, name: heavy, widget: number}
+              - label: Productivity (m²/day)
+                name: productivity
+                widget: object
+                fields:
+                  - {label: Patio, name: patio, widget: number}
+                  - {label: Shed base, name: shedbase, widget: number}
+                  - {label: Steps, name: steps, widget: number}
+                  - {label: Raised beds, name: raisedbeds, widget: number}
+                  - {label: Path, name: path, widget: number}
+              - {label: Overhead rate (0–1), name: overheadRate, widget: number, value_type: float, step: 0.01}
+              - {label: Contingency rate (0–1), name: contingencyRate, widget: number, value_type: float, step: 0.01}
+              - {label: Overhead floor (£), name: overheadFloor, widget: number}
