@@ -1,0 +1,60 @@
+{
+  "brand": {
+    "name": "Bates Landscapes",
+    "owner": "Bates Landscapes",
+    "phone": "+44 7785 585 870",
+    "whatsapp": "447785585870",
+    "email": "jrboyce@hotmail.com",
+    "areas": "Sheffield & Peak District",
+    "strap": "Patios \u2022 Shed Bases \u2022 Garden Beds \u2014 Sheffield & Peak District"
+  },
+  "pricing": {
+    "bases": {
+      "patio": {
+        "labourPerM2": 70,
+        "materialPerM2": 55
+      },
+      "shedbase": {
+        "labourPerM2": 55,
+        "materialPerM2": 35
+      },
+      "steps": {
+        "labourPerM2": 120,
+        "materialPerM2": 65
+      },
+      "raisedbeds": {
+        "labourPerM2": 65,
+        "materialPerM2": 50
+      },
+      "path": {
+        "labourPerM2": 50,
+        "materialPerM2": 30
+      }
+    },
+    "tiers": {
+      "basic": 1.0,
+      "mid": 1.35,
+      "premium": 1.75
+    },
+    "access": {
+      "easy": 1.0,
+      "normal": 1.1,
+      "tricky": 1.25
+    },
+    "wasteAddPerM2": {
+      "none": 0,
+      "some": 5,
+      "heavy": 12
+    },
+    "productivity": {
+      "patio": 8,
+      "shedbase": 10,
+      "steps": 4,
+      "raisedbeds": 10,
+      "path": 12
+    },
+    "overheadRate": 0.05,
+    "contingencyRate": 0.08,
+    "overheadFloor": 50
+  }
+}
